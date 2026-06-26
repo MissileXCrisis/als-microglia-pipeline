@@ -1,0 +1,20 @@
+# Ignore python virtual environments and cache
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# Ignore heavy raw data and metadata files
+data/raw/
+data/metadata/
+
+# Ignore heavy processed machine learning checkpoint files
+data/processed/als_spinal_cord_phase3_pca.h5ad
+
+# Prevent accidental commits of your local SQLite DB
+data/*.db
+
+# Block the raw data archive in the root directory
+GSE204704_RAW.tar
+*.tar
