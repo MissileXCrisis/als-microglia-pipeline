@@ -20,7 +20,7 @@ st.subheader("📊 Publication-Ready Statistical Clustering")
 col_img1, col_map_desc = st.columns([1, 1])
 with col_img1:
     # Render your static hierarchical dendrogram figure
-    st.image("data/processed/Dendrogram_dotplot.png", caption="Figure 1: Hierarchical Cluster Dendrogram Relationship", use_container_width=True)
+    st.image("data/processed/Dendrogram_Dotplot.png", caption="Figure 1: Hierarchical Cluster Dendrogram Relationship", use_container_width=True)
 
 # 2. OPTIMIZED DATA LOADING
 @st.cache_data
