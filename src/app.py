@@ -75,8 +75,14 @@ with col_right:
     st.subheader("Immune Ecosystem Abundance Profiles")
     st.write("")  # Whitespace buffer to align dropdown alignment
 
-    # Programmatically calculate percentages on the fly based on the current data slice
-    count_table = pd.crosstab(plot_df["Donor_ID"], plot_df["Cell_Type"])
+    # 1. Strip the index alignment by using .values to pass raw numpy arrays
+    count_table = pd.crosstab(plot_df["Donor_ID"].values, plot_df["Cell_Type"].values)
+
+    # 2. Explicitly name the index and columns so the downstream plot labels match perfectly
+    count_table.index.name = "donor_id"
+    count_table.columns.name = "cell_type"
+
+    # 3. Calculate your percentage matrix as usual
     percentage_table = count_table.div(count_table.sum(axis=1), axis=0) * 100
 
     fig2, ax2 = plt.subplots(figsize=(6, 4))
