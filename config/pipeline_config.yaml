@@ -1,0 +1,23 @@
+# Centralized Control Configuration File for ALS Single-Cell Pipeline
+
+raw_data:
+  file_paths:
+    - "data/raw/GSM6186106_MA004_filtered_feature_bc_matrix.h5"
+    - "data/raw/GSM6186110_PM039_filtered_feature_bc_matrix.h5"
+    - "data/raw/GSM6186112_PM041_filtered_feature_bc_matrix.h5"
+    - "data/raw/GSM6186115_PM045_filtered_feature_bc_matrix.h5"
+    - "data/raw/GSM6186120_PM052_filtered_feature_bc_matrix.h5"
+
+quality_control:
+  min_genes_per_cell: 200
+  min_cells_per_gene: 3
+  max_mitochondrial_pct: 0.15   # Lysed cell cutoff point
+  doublet_threshold: "auto"     # Scrublet expected collision rate
+
+feature_selection:
+  n_top_genes: 2000             # Highly Variable Genes (HVGs) strategy
+  n_pcs: 30                     # Principal components to compress down to
+
+clustering:
+  neighbors_k: 15               # k-NN graph local connectivity mapping
+  leiden_resolution: 0.5        # Community detection granularity
