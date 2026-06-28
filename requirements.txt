@@ -5,3 +5,6 @@ seaborn
 scanpy
 scipy
 pyyaml
+scikit-image
+leidenalg
+igraph
